@@ -1,0 +1,25 @@
+{
+    "name": "DLT CLI",
+    "clusters": [
+        {
+            "label": "default",
+            "num_workers": 0
+        }
+    ],
+    "development": true,
+    "continuous": false,
+    "photon": true,
+    "libraries": [
+        {
+            "notebook": {
+                "path": "/Repos/daghan.acay@contino.io/data-engineer-learning-path/05 - Workflow Jobs/DE 5.1 - Scheduling Tasks with the Jobs UI/DE 5.1.3 - DLT Job"
+            }
+        }
+    ],
+    "storage": "dbfs:/mnt/dbacademy-users/daghan.acay@contino.io/data-engineer-learning-path/jobs_demo/storage_location",
+    "configuration": {
+        "source": "dbfs:/mnt/dbacademy-datasets/data-engineer-learning-path/v01",
+        "spark.master": "local[*]"
+    },
+    "target": "daghan_acay_t835_dbacademy_delp_jobs_demo"
+}
