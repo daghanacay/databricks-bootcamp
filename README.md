@@ -9,6 +9,8 @@ Starts pipenv shell and check if you have the installation is sucessful
 - pipenv shell
 - databricks -version
 
+Chekcout repo into your databrivks environment as well.
+
 # Set up Authentication
 
 databricks configure --token
