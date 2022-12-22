@@ -1,2 +1,2 @@
 # Databricks notebook source
-# MAGIC %run includes/Setup_1
+# MAGIC %run ./includes/Setup_1
