@@ -3,7 +3,7 @@
 
 # COMMAND ----------
 
-# MAGIC %run ./Classroom-Setup-05.1-Common
+# MAGIC %run ./Setup_Common
 
 # COMMAND ----------
 
