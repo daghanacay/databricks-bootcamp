@@ -55,10 +55,12 @@ See if you get the access correct by running
 
  # Creating an running a job
 
- Create a job in the databricks. You need to change the follwing entries in the jobs.json:
+ Create a job in the databricks. You need to change the following entries in the jobs.json:
 
  - notebook_path: user id e.g. daghan.acay@contino.io should be replaced by your user id
  - existing_cluster_id: should be set to an exisitng generic cluster id 
+
+ you can create the job and "Reset" task using the following comment
 
  databricks jobs create --json-file databricks/jobs/jobs.json
 
@@ -76,6 +78,41 @@ See if you get the access correct by running
 
 databricks jobs run-now --job-id [your job id]
 
+# Add DLT to your job
+
+You create a DLT pipeline to your job. before you run it you need to change the following entires in the DLT.json
+
+- target: look at the job run from the previous section. in the task run logs you will find "Creating & using the schema "[your id here]_delp_jobs_demo"...(0 seconds)". replace the "target" in DLT.json with the value from the logs
+- path: user id e.g. daghan.acay@contino.io should be replaced by your user id
+- storage: user id e.g. daghan.acay@contino.io should be replaced by your user id
+
+you can create the DLT pipeline and the reset task using the following comment
+
+databricks pipelines create --settings databricks/jobs/DLT.json
+
+You will get the job_id as an output. You can also find pipeline id as follows
+
+databricks pipelines list | jq '.[] | select(.name=="DLT CLI").pipeline_id'
+
+Or you can find it from the databricks workspace
+
+![Select Access Token](./images/DLTpipeline.png)
+
+you can find the data used for the DLT pipeline using the "fs" CLI
+
+databricks fs ls dbfs:/mnt/dbacademy-datasets/data-engineer-learning-path/v01
+
+# Other lagauges that can be added to Jobs
+
+see 
+![Select Access Token](./images/OtherLanguages.png)
+
+# Cleaning up
+
 and finally delete the job
 
 databricks jobs delete --job-id [your job id]
+
+and delete DLT pipeline
+
+databricks pipelines delete --pipeline-id  [your DLT pipeline ID]
