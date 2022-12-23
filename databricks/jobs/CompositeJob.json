@@ -25,7 +25,7 @@
                 }
             ],
             "pipeline_task": {
-                "pipeline_id": "abd6445e-9537-4c5f-87c0-982d515ef9c1"
+                "pipeline_id": "dc1277e5-b1a6-4aac-9409-b4f52951f88d"
             },
             "timeout_seconds": 0,
             "email_notifications": {}

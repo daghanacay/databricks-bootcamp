@@ -73,7 +73,7 @@ See if you get the access correct by running
  First we will create a job in the databricks. You need to change the following entries in the jobs.json:
 
  - notebook_path: user id e.g. daghan.acay@contino.io should be replaced by your user id
- - existing_cluster_id: should be set to an exisitng generic cluster id 
+ - existing_cluster_id: should be set to an exisitng generic cluster id. this can be found from "databricks clusters list"
 
  you can create the job and "Reset" task using the following comment
 
@@ -83,9 +83,9 @@ See if you get the access correct by running
 
  - $ databricks jobs list | grep "Example Job CLI"
 
- or you can alsways check from the databricks workspace 
+ or you can always check from the databricks workspace 
 
-![Select Access Token](./images/JobId.png)
+![Job id](./images/JobId.png)
 
 
  you can run your job using command 
@@ -110,7 +110,7 @@ You will get the job_id as an output. You can also find pipeline id as follows
 
 Or you can find it from the databricks workspace
 
-![Select Access Token](./images/DLTpipeline.png)
+![DLT pipeline](./images/DLTpipeline.png)
 
 you can find the data used for the DLT pipeline using the "fs" CLI
 
@@ -132,12 +132,12 @@ You can run the coposite job as follows
 
 # Results of the composite job
 
-Please go back to your databricks console and open the Repos/
+Please go back to your databricks console and open the "Repos/Databricks-bootcamp/databricks/Check your work" and follow the instructions there.
 
 # Other languages that can be added to Jobs
 
 see 
-![Select Access Token](./images/OtherLanguages.png)
+![Other languages](./images/OtherLanguages.png)
 
 
 
@@ -145,8 +145,8 @@ see
 
 and finally delete the job
 
-databricks jobs delete --job-id [your job id]
+- $ databricks jobs delete --job-id [your job id] -- do this twice both for "Example Example Job CLI" and "Composite Job CLI"
 
 and delete DLT pipeline
 
-databricks pipelines delete --pipeline-id  [your DLT pipeline ID]
+- $ databricks pipelines delete --pipeline-id  [your DLT pipeline ID]
